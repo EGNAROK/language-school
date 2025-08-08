@@ -1,9 +1,10 @@
-const path = require('path')
-const autoprefixer = require('autoprefixer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer'); 
+const path = require('path');
 
 module.exports = {
   mode: 'development',
+  devtool: 'source-map', // <-- це для загального дебагу
   entry: './src/index.js',
   output: {
     filename: 'index.js',
@@ -25,18 +26,15 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
+          'style-loader',
           {
-
-            loader: 'style-loader'
+            loader: 'css-loader',
+            options: { sourceMap: true }
           },
           {
-
-            loader: 'css-loader'
-          },
-          {
-
             loader: 'postcss-loader',
             options: {
+              sourceMap: true,
               postcssOptions: {
                 plugins: [
                   autoprefixer
@@ -45,17 +43,20 @@ module.exports = {
             }
           },
           {
-
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              implementation: require('sass')
+            }
           }
         ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'images/[name][ext]',
-                },
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
       },
       {
         test: /\.html$/,
@@ -67,4 +68,4 @@ module.exports = {
       },
     ]
   }
-}
+};
