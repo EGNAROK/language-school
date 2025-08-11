@@ -1,0 +1,177 @@
+.mainScreenContainer {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px 50px 80px;
+  background-color: #f2e6d4;
+  margin-top: 70px;
+
+  // .textImg {
+  //   img {
+  //     width: 100%;
+  //     transform: scale(0);
+  //     opacity: 0;
+  //     transition: all 1.5s ease 0s;
+  //   }
+  //   img._active {
+  //       transform: scale(1);
+  //       opacity: 1;
+  //   }
+  // }
+
+  .mainImg {
+    margin-top: 30px;
+
+    img {
+      width: 20%;
+      margin: 0 auto;
+      transform: scale(0);
+      opacity: 0;
+      transition: all 1.5s ease 0.8s;
+    }
+    img._active {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    img:first-child {
+      width: 150px;
+      margin-right: -120px;
+    }
+
+    img:last-child {
+      width: 150px;
+      margin-top: -100px;
+      margin-left: -120px;
+    }
+  }
+  .descriptionBtn {
+    width: 218px;
+    margin: 40px auto 0;
+    font-family: "Comfortaa", Sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: 3.2px;
+    fill: #000000b3;
+    color: #000000b3;
+    background-color: #fffb00;
+    border-radius: 50px;
+    border: none;
+    padding: 12px 24px;
+    display: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .mainScreenContainer {
+    padding: 60px 7px 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mainScreenContainer {
+    .mainImg {
+      margin-top: 30px;
+
+      img {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      img:first-child {
+        width: 130px;
+        margin-right: -100px;
+      }
+
+      img:last-child {
+        width: 130px;
+        margin-top: -100px;
+        margin-left: -100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .mainScreenContainer {
+    padding: 60px 7px 60px;
+    margin-top: 50px;
+    .textImg img {
+      width: 90%;
+      margin: 0 auto;
+      content: url("https://www.fonema.space/wp-content/uploads/2023/08/phone.png");
+    }
+
+    .mainImg {
+      margin-top: 50px;
+
+      img {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      img:first-child {
+        width: 90px;
+        margin-right: -80px;
+      }
+
+      img:last-child {
+        width: 90px;
+        margin-top: -100px;
+        margin-left: -90px;
+      }
+    }
+
+    .descriptionBtn {
+      display: block;
+    }
+    .descriptionBtn:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainScreenContainer {
+    padding: 20px 42px 60px;
+
+    .textImg img {
+      width: 100%;
+    }
+
+    .mainImg {
+      img {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      img:first-child {
+        display: none;
+      }
+
+      img:last-child {
+        display: none;
+      }
+    }
+
+    .descriptionBtn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mainScreenContainer {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
